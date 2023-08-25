@@ -56,9 +56,7 @@
   },
   "scripts": {
     "setup": "node ./cli/prepare-app/index.js",
-    "wb": "node ./cli/command-app/index.js",
-    "lint": "eslint src",
-    "lint:types": "tsc --noEmit"
+    "wb": "node ./cli/command-app/index.js"
   },
   "devDependencies": {
     "@commitlint/cli": "8.2.0",
