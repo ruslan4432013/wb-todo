@@ -2,14 +2,16 @@
 @import "@wildberries/ui-kit/lib/styles/media.module.scss";
 
 .Header {
+  align-items: center;
   background-color: $White;
-
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32px;
   &__main {
     align-items: center;
     display: flex;
     height: 60px;
     justify-content: space-between;
-    padding: 0 32px;
   }
 
   &__logo {

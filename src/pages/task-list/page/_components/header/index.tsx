@@ -1,6 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import classnames from 'classnames/bind';
 import i18next from 'i18next';
+import { SelectLangDropdown } from './_components/select-lang-dropdown';
 import styles from './index.module.scss';
 
 const cn = classnames.bind(styles);
@@ -34,22 +35,9 @@ export const Header = memo(() => {
             src={mobileHref}
           />
         </picture>
-        <div className={cn(`${BLOCK_NAME}__information-block`)}>
-          <div className={cn(`${BLOCK_NAME}__notifications`)} />
-          <div className={cn(`${BLOCK_NAME}__informations`)} />
-          <div className={cn(`${BLOCK_NAME}__divider`)} />
-          <div className={cn(`${BLOCK_NAME}__supplier-name`)} />
-        </div>
       </div>
-      <div className={cn(`${BLOCK_NAME}__menu`)}>
-        <div className={cn(`${BLOCK_NAME}__menu-item`)} />
-        <div className={cn(`${BLOCK_NAME}__menu-item`)} />
-        <div className={cn(`${BLOCK_NAME}__menu-item`)} />
-        <div className={cn(`${BLOCK_NAME}__menu-item`)} />
-        <div className={cn(`${BLOCK_NAME}__menu-item`)} />
-        <div className={cn(`${BLOCK_NAME}__menu-item`)} />
-        <div className={cn(`${BLOCK_NAME}__menu-item`)} />
-        <div className={cn(`${BLOCK_NAME}__menu-item`)} />
+      <div>
+        <SelectLangDropdown />
       </div>
     </div>
   );
