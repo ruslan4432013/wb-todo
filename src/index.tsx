@@ -1,5 +1,5 @@
 import 'fast-text-encoding/text';
-/* 
+/*
     if you need some polyfills and you are not in "rus" or "euro" version
     please insert below (package is included)
     import 'react-app-polyfill/stable';
@@ -47,7 +47,7 @@ if (!ROOT_ELEMENT) {
 }
 
 const router = configureRouter({
-  defaultRoute: 'home',
+  defaultRoute: 'task-list',
   eventNameToCancelRequests: ABORT_REQUEST_EVENT_NAME,
   // uncomment if you need envs from window (for example for request endpoints)
   // enableWindowEnvsMiddleware: true,
@@ -71,7 +71,7 @@ export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
 const i18nextConfig = {
-  getLocale,
+  getLocale: () => getLocale({ isFromCookie: true }),
   i18next,
   i18nextRequest,
   actionToStartLoading: starti18nextLoadingAction,
@@ -88,7 +88,10 @@ router.setDependencies({
 
 router.add(routes);
 
-geti18Next({ appNamespace: APP_NAMESPACE, locale: getLocale() }).then(() =>
+geti18Next({
+  appNamespace: APP_NAMESPACE,
+  locale: getLocale({ isFromCookie: true }),
+}).then(() =>
   router.start(() => {
     const root = createRoot(ROOT_ELEMENT);
     root.render(

@@ -1,3 +1,3 @@
-import home from './home/route';
+import tasks from './task-list/route';
 
-export const routes = [home];
+export const routes = [tasks];

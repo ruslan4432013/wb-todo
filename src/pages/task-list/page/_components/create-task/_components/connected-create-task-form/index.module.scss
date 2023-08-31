@@ -1,0 +1,10 @@
+.CreateTaskForm {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+
+  &__create-button {
+    align-self: center;
+    margin-top: 12px;
+  }
+}
