@@ -1,3 +1,5 @@
+const crypto = require('crypto');
+
 module.exports.uuid4 = () => {
   // Генерируем 16-байтное случайное число
   const buffer = new Uint8Array(16);
