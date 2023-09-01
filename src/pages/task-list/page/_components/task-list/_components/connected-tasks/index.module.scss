@@ -1,0 +1,10 @@
+.Tasks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding-top: 12px;
+  &__title {
+    text-align: center;
+  }
+}

@@ -9,7 +9,10 @@ const {
 const getTasksController = async (req, res) => {
   const tasks = await getAllTasks();
   res.status(200).json({
-    result: {
+    error: false,
+    errorText: '',
+    additionalErrors: null,
+    data: {
       tasks,
     },
   });
@@ -20,7 +23,10 @@ const createTaskController = async (req, res) => {
   const task = req.body; // Предполагается, что данные задачи передаются в теле запроса
   const newTask = createTask(task);
   res.status(201).json({
-    result: {
+    error: false,
+    errorText: '',
+    additionalErrors: null,
+    data: {
       task: newTask,
     },
   });
@@ -32,7 +38,10 @@ const getTaskController = async (req, res) => {
   const task = getTaskById(uuid);
   if (task) {
     res.status(200).json({
-      result: {
+      error: false,
+      errorText: '',
+      additionalErrors: null,
+      data: {
         task,
       },
     });
@@ -50,7 +59,10 @@ const updateTaskController = async (req, res) => {
   const task = updateTask(uuid, updatedTask);
   if (task) {
     res.status(200).json({
-      result: {
+      error: false,
+      errorText: '',
+      additionalErrors: null,
+      data: {
         task,
       },
     });
@@ -67,7 +79,10 @@ const deleteTaskController = async (req, res) => {
   const deletedTask = deleteTask(uuid);
   if (deletedTask) {
     res.status(200).json({
-      result: {
+      error: false,
+      errorText: '',
+      additionalErrors: null,
+      data: {
         task: deletedTask,
       },
     });

@@ -1,12 +1,10 @@
-import { countriesEndpoint } from '@/api/endpoints/suppliers';
+import { IRequestParams } from '@mihanizm56/fetch-api';
 import { requestTranslateFunction } from '@/_constants/i18next/i18next-constants';
+import { tasksEndpoint } from '@/api/endpoints/tasks';
 import { responseSchema } from './response-schema';
 
-export const makeRequestConfig = () => ({
-  endpoint: countriesEndpoint,
+export const makeRequestConfig = (): IRequestParams => ({
+  endpoint: tasksEndpoint,
   translateFunction: requestTranslateFunction,
   responseSchema,
-  headers: {
-    'X-User-Id': '2',
-  },
 });
