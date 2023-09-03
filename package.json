@@ -57,8 +57,7 @@
   },
   "scripts": {
     "setup": "node ./cli/prepare-app/index.js",
-    "wb": "node ./cli/command-app/index.js",
-    "run:server": "node ./server/app.js"
+    "wb": "node ./cli/command-app/index.js"
   },
   "devDependencies": {
     "@commitlint/cli": "8.2.0",
